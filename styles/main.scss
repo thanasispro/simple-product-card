@@ -1,0 +1,213 @@
+// Use variables instead of import
+@use 'variables' as v;
+
+h1, h2, h3, h4, h5, h6, p, figure, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+// Typography Presets
+.text-preset-1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.text-preset-2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.text-preset-3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 160%;
+  letter-spacing: 0;
+}
+
+.text-preset-4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 120%;
+  letter-spacing: 0.3125rem;
+}
+
+.text-preset-5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+// General styles
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: v.$cream;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+// Product Card
+.product-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 21.875rem;
+  background: v.$white;
+  border-radius: v.$spacing-100;
+  box-shadow: 0 v.$spacing-50 v.$spacing-100 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    max-width: 37.5rem;
+  }
+}
+
+// Product Image
+.product-image {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// Product Details
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: v.$spacing-400;
+  gap: v.$spacing-300;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  background: v.$white;
+
+  @media (min-width: 768px) {
+    flex: 1;
+    width: auto;
+  }
+}
+
+// Title Container
+.product-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: v.$spacing-300;
+}
+
+// Product Title
+.product-title {
+  margin: 0;
+  color: v.$black;
+}
+
+// Product Category
+.product-category {
+  color: v.$grey;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+// Product Description
+.product-description {
+  color: v.$grey;
+}
+
+// Product Pricing
+.product-pricing {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-200;
+}
+
+.current-price {
+  font-weight: bold;
+  color: v.$green-500;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: v.$grey;
+}
+
+// Add to Cart Button
+.add-to-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: v.$spacing-200 v.$spacing-400;
+  gap: v.$spacing-100;
+  width: 100%;
+  height: 3.125rem;
+  color: v.$white;
+  background-color: v.$green-500;
+  border: none;
+  border-radius: v.$spacing-100;
+  cursor: pointer;
+
+  &:hover {
+    background-color: v.$green-700;
+  }
+  
+  .cart-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 0.6875rem;
+  margin-top: 1.5rem;
+  position: absolute;
+  bottom: 0.625rem;
+  left: 0;
+  right: 0;
+  color: v.$grey;
+
+  a {
+    color: v.$green-500;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
